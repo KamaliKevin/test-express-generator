@@ -8,6 +8,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const bicycleAPIRouter = require('./routes/api/bicycles');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 4. Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/bicycles', bicycleAPIRouter);
 
 
 // 5. Error handlers
